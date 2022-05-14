@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Lemonade - A Bitterly Insecure Web Application</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<!-- Begin IE Fixes (Don't touch unless you know what you're doing!)-->
+	<!--[if IE]>
+	<link type="text/css" href="ie.css" rel="stylesheet" />
+	<![endif]-->
+<!-- End of IE fixes -->
+
+<style>[_nghost-osa-c63]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+<body>
+
+<div id="container">
+	<div id="navigation">
+		<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="index.php?page=products">Our Products</a></li>
+		<li><a href="index.php?page=forum">Forum</a></li>
+		<div id="login">
+			<a href="index.php?page=login">login</a>		</div>
+		</ul>
+	</div>
+  		<div id="header">
+		  <h1>lemonade.</h1>
+		  <h2>is a uniquely sweet and sour liquid</h2>		</div>
+		<div id="wrapper">
+		<div id="content">
+		<!-- Begin Content -->
+          <h1>Login</h1>
+          <form name="loginform" method="POST" action="/index.php?page=login">
+          <table>
+          <tbody><tr>
+             <td>Username:</td>
+            <td><input type="text" name="user_name" size="30" autocomplete="no" value=""></td>
+          </tr>
+          <tr>
+             <td>Password:</td>
+            <td colspan="2"><input type="password" name="password" size="30" autocomplete="no">
+            <input type="submit" name="submit_login" value="Log in"></td>
+          </tr>
+          </tbody></table>
+          </form>
+
+<div id="warnings">
+</div>
+
+<script>document.loginform.login_username.focus();</script>
+		
+		<!-- End Content -->
+		</div> <!-- div id="content"-->
+		</div> <!-- div id="wrapper"-->
+		<div id="footer">
+			<span id="footer-right"><a href="http://www.dei.isep.ipp.pt/">DEI/ISEP</a></span>
+			Nuno Pereira; Engenharia de Segurança Informática
+		</div> 
+		<font size="1" align="right">(design by <a href="http://smallpark.org">Anthony Yeung</a>)</font>
+</div><!-- div id="container" -->
+
+
+<script>mendeleyWebImporter = {
+  downloadPdfs(e,t) { return this._call('downloadPdfs', [e,t]); },
+  open() { return this._call('open', []); },
+  setLoginToken(e) { return this._call('setLoginToken', [e]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.8013807989268824', methodName, methodArgs }, 'http://192.168.1.111');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body><app-content ng-version="13.2.0"></app-content></html>
